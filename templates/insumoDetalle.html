@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="large-12 columns">
+	<h4 class="color-white"><a href="/">Inicio -</a> Detalle insumo</h4>
+	<div class=" panel large-12 columns">
+		<form  enctype='multipart/form-data' action='' method='POST'>
+			<div class="row">
+				<p style="text-align:center; color:gray;"> <em> Actualice los campos</em></p>
+				<div class="  large-12 columns">
+					{% csrf_token %}
+					{{ form.non_field_errors }}
+					<label > Codigo:
+						{{ form.codigo }}
+					</label>
+					{% if form.codigo.errors %}
+						{% for error in form.codigo.errors %}
+							<small class="error">
+								{{ error|escape }}
+							</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+				<div class="large-6 columns">
+					<label > Nombre:
+						{{ form.nombreI }}
+					</label>
+					{% if form.nombreI.errors %}
+						{% for error in form.nombreI.errors %}
+							<small class="error">
+								{{ error|escape }}
+							</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+        <div class="large-6 columns">
+					<label > Detalle:
+						{{ form.detalle }}
+					</label>
+					{% if form.detalle.errors %}
+						{% for error in form.detalle.errors %}
+							<small class="error">
+								{{ error|escape }}
+							</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns">
+					<label> Precio:
+						{{ form.precio }}
+					</label>
+					{% if form.precio.errors %}
+						{% for error in form.precio.errors %}
+							<small class="error">
+								{{ error|escape }}
+							</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+				<div class="large-6 columns">
+					<label > Unidad:
+						{{ form.unidad }}
+					</label>
+					{% if form.unidad.errors %}
+						{% for error in form.unidad.errors %}
+							<small class="error">
+								{{ error|escape }}
+							</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+        <div class="large-12 columns">
+					<label > Observaciones:
+						{{ form.observaciones }}
+					</label>
+					{% if form.observaciones.errors %}
+						{% for error in form.observaciones.errors %}
+							<small class="error">
+								{{ error|escape }}
+							</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+
+			<br>
+			<div class="large-12 columns">
+				<input style="background-color:#04B4AE" class="button default" type='submit' value='Actualizar'/>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

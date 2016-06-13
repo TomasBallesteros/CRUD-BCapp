@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+	<div class="large-12 columns">
+  	<h4 class="color-white"><a href="/">Inicio -</a> Nueva obra</h4>
+    <div class=" panel large-12 columns">
+      <form  enctype='multipart/form-data' action='' method='POST'>
+      	<div class="row">
+        	<p style="text-align:center; color:gray;"> <em> Ingrese los campos</em></p>
+        	<div class="  large-12 columns">
+          	{% csrf_token %}
+            {{ form.non_field_errors }}
+						<label > Nit:
+            	{{ form.nit }}
+            </label>
+            {% if form.nit.errors %}
+            	{% for error in form.nit.errors %}
+              	<small class="error">
+                	{{ error|escape }}
+                </small>
+              {% endfor %}
+            {% endif %}
+          </div>
+					<div class="large-6 columns">
+	        	<label > Nombre:
+	          	{{ form.nombreO }}
+	          </label>
+	          {% if form.nombreO.errors %}
+	          	{% for error in form.nombreO.errors %}
+	            	<small class="error">
+	              	{{ error|escape }}
+	              </small>
+	            {% endfor %}
+	          {% endif %}
+	        </div>
+          <div class="large-6 columns">
+	        	<label > Direccion:
+	          	{{ form.direccion }}
+	          </label>
+	          {% if form.direccion.errors %}
+	          	{% for error in form.direccion.errors %}
+	            	<small class="error">
+	              	{{ error|escape }}
+	              </small>
+	            {% endfor %}
+	          {% endif %}
+	        </div>
+        	<div class="large-6 columns">
+						<label> Fecha inicio:
+							{{ form.fecha_inicio }}
+						</label>
+						{% if form.fecha_inicio.errors %}
+							{% for error in form.fecha_inicio.errors %}
+								<small class="error">
+									{{ error|escape }}
+								</small>
+							{% endfor %}
+						{% endif %}
+					</div>
+					<div class="large-6 columns">
+	        	<label > Fecha finalizacion:
+	          	{{ form.fecha_fin }}
+	          </label>
+	          {% if form.fecha_fin.errors %}
+	          	{% for error in form.fecha_fin.errors %}
+	          		<small class="error">
+	              	{{ error|escape }}
+	              </small>
+	            {% endfor %}
+	          {% endif %}
+	        </div>
+          <div class="large-12 columns">
+	        	<label > Observaciones:
+	          	{{ form.observacioneso }}
+	          </label>
+	          {% if form.observacioneso.errors %}
+	          	{% for error in form.observacioneso.errors %}
+	          		<small class="error">
+	              	{{ error|escape }}
+	              </small>
+	            {% endfor %}
+	          {% endif %}
+	        </div>
+        </div>
+
+				<br>
+    		<div class="large-12 columns">
+    			<input style="background-color:#04B4AE" class="button default" type='submit' value='Guardar'/>
+				</div>
+  		</form>
+		</div>
+	</div>
+
+{% endblock %}

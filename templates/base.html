@@ -1,0 +1,149 @@
+<!doctype html>
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BCapp</title>
+<meta name="description" content="Free Zurb foundation one page template on foundationdeck">
+<link href='{{STATIC_URL}}css/letra.css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{STATIC_URL}}css/foundation.min.css" />
+   <script src="{{STATIC_URL}}js/vendor/modernizr.js"></script>
+   <link href="{{STATIC_URL}}css/style.css" rel="stylesheet" />
+   <link href="{{STATIC_URL}}css/flaticon.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="intro">
+      <div class="row">
+          <div class="large-12 columns">
+              <div style="background-color:rgba(0,0,0,0.7); min-height:100%; width:100%;">
+                  <div class="display-table" style="height:600px; width:100%;">
+                      <div class="va-align">
+                          <h2 class="color-white">Bienvenido a BUDGET CONSTRUCTION</h2>
+                          <br>
+                          <h4 class="color-white">Realize el presupuesto de su proyecto con mucha facilidad.</h4>
+                          <br>
+                          <img src="{{STATIC_URL}}img/Capture2.png" alt="logo" />
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+   <div id="features">
+       <div class="row">
+           <div class="large-2 columns">
+               <div class="featured-item">
+                   <img src="{{STATIC_URL}}img/hammer.jpg" alt="logo" />
+                   <a href={{ request.get_host }}/insumo/nuevo><h6 class="text-center">Insumos</h6>
+                   <div>
+                       Agregar insumos</a>
+                   </div>
+               </div>
+           </div>
+           <div class="large-2 columns">
+               <div class="featured-item">
+                   <img src="{{STATIC_URL}}img/shop.jpg" alt="logo" />
+                   <a href={{ request.get_host }}/obra/nuevo><h6 class="text-center">Obras</h6>
+                   <div>
+                       Agregar obras</a>
+                   </div>
+               </div>
+           </div>
+           <div class="large-2 columns">
+               <div class="featured-item">
+                   <img src="{{STATIC_URL}}img/bank-terminal.jpg" alt="logo" />
+                   <a href={{ request.get_host }}/presupuesto/nuevo><h6 class="text-center">Presupuestos</h6>
+                   <div>
+                       Agregar presupuestos</a>
+                   </div>
+               </div>
+           </div>
+           <div class="large-2 columns">
+               <div class="featured-item">
+                   <img src="{{STATIC_URL}}img/truck.jpg" alt="logo" />
+                   <a href={{ request.get_host }}/insumo/listado><h6 class="text-center">Lista de insumos</h6>
+                   <div>
+                       Lista, Edita y Actualiza insumos</a>
+                   </div>
+               </div>
+           </div>
+           <div class="large-2 columns">
+               <div class="featured-item">
+                   <img src="{{STATIC_URL}}img/map.jpg" alt="logo" />
+                   <a href={{ request.get_host }}/obra/listado><h6 class="text-center">Lista de obras</h6>
+                   <div>
+                       Lista, Edita y Actualiza obras</a>
+                   </div>
+               </div>
+           </div>
+           <div class="large-2 columns">
+               <div class="featured-item">
+                   <img src="{{STATIC_URL}}img/check.jpg" alt="logo" />
+                   <a href={{ request.get_host }}/presupuesto/listado><h6 class="text-center">Lista de presupuestos</h6>
+                   <div>
+                       Lista, Edita y Actualiza presupuestos</a>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="info">
+       <div class="row">
+           <div class="large-12 columns">
+               {% block contenido %} {% endblock %}
+           </div>
+       </div>
+   </div>
+<div id="testimonial">
+
+         <h3 class="text-center color-white">Sobre nosotros</b></span></h3>
+         <div class="row">
+             <div class="medium-4 large-4 columns">
+
+                     <img src="{{STATIC_URL}}img/tomas.jpg" alt="logo" />
+                     <div>
+                         <h5 class="color-white">Tomas Ballesteros</h5>
+                         <p>CEO</p>
+                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                         consequat.
+                     </div>
+
+             </div>
+             <div class="medium-4 large-4 columns">
+
+                     <img src="{{STATIC_URL}}img/fernando.jpg" alt="logo" />
+                     <div>
+                         <h5 class="color-white">Fernando Correa</h5>
+                         <p>Director</p>
+                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                         consequat.
+                     </div>
+
+             </div>
+          </div>
+
+      </div>
+  </div>
+  <footer>
+       <div class="row text-center">
+           <div class="large-12 columns">
+             <h6>Todos los derechos reservados 2016 &copy;</h6>
+             <a href="https://github.com/TomasBallesteros"><img src="{{STATIC_URL}}img/github.png" alt="logo"></a>
+             <br>
+             <a href="https://foundationdeck.com"><img src="{{STATIC_URL}}img/Capture.png" alt="logo"/></a>
+           </div>
+       </div>
+   </footer>
+</body>
+<script src="{{STATIC_URL}}js/vendor/jquery.js"></script>
+<script src="{{STATIC_URL}}js/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>
+</html>

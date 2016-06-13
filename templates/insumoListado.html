@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<br>
+  <div class="large-12 columns">
+    <h4 class="color-white"><a href="/">Inicio -</a> Lista de insumos</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="235">Codigo</th>
+          <th width="235">Nombre</th>
+          <th width="235">Detalle</th>
+          <th width="235">Precio</th>
+          <th width="235">Unidad</th>
+          <th width="235">Observacion</th>
+        </tr>
+      </thead>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        {% for insum in Insumo %}
+        <tr>
+          <td><a href={{ request.get_host }}/insum/{{insum.id}}>{{insum.codigo}}</a></td>
+          <td>{{insum.nombreI}}</td>
+          <td>{{insum.detalle}}</td>
+          <td>{{insum.precio}}</td>
+          <td>{{insum.unidad}}</td>
+          <td>{{insum.observaciones}}</td>
+          <td><a href={{ request.get_host }}/insum_e/{{insum.id}}><input style="background-color:#FF0000" class="button tiny" type='submit' value='Borrar'/></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock %}

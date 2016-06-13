@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<br>
+  <div class="large-12 columns">
+    <h4 class="color-white"><a href="/">Inicio -</a> Lista de Presupuestos</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="235">Id Presupuesto</th>
+          <th width="235">Codigo Insumo</th>
+          <th width="235">Nit Obra</th>
+          <th width="235">Cantidad</th>
+          <th width="235">Total</th>
+        </tr>
+      </thead>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        {% for presupuest in Presupuesto %}
+        <tr>
+          <td><a href={{ request.get_host }}/presupuest/{{presupuest.idPresupuesto}}>{{presupuest.idPresupuesto}}</a></td>
+          <td>{{presupuest.codigo_id}}</td>
+          <td>{{presupuest.nit_id}}</td>
+          <td>{{presupuest.cantidad}}</td>
+          <td>{{presupuest.precoParcial}}</td>
+          <td><a href={{ request.get_host }}/presupuest_e/{{presupuest.idPresupuesto}}><input style="background-color:#FF0000" class="button tiny" type='submit' value='Borrar'/></div></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock %}

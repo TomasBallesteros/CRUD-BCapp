@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="large-12 columns">
+	<h4 class="color-white"><a href="/">Inicio -</a> Detalle presupuesto</h4>
+	<div class=" panel large-12 columns">
+		<form  enctype='multipart/form-data' action='' method='POST'>
+			<div class="row">
+				<p style="text-align:center; color:gray;"> <em> Actualice los campos</em></p>
+				<div class="  large-6 columns">
+					{% csrf_token %}
+					{{ form.non_field_errors }}
+					<label > Codigo del insumo:
+						{{ form.codigo_id }}
+					</label>
+					{% if form.codigo_id.errors %}
+						{% for error in form.codigo_id.errors %}
+							<small class="error">
+								{{ error|escape }}
+							</small>
+ 						{% endfor %}
+					{% endif %}
+				</div>
+				<div class="large-6 columns">
+					<label> Nit de la obra:
+						{{ form.nit_id }}
+					</label>
+					{% if form.nit_id.errors %}
+						{% for error in form.nit_id.errors %}
+							<small class="error">
+								{{ error|escape }}
+							</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+				<div class="large-6 columns">
+					<label> Cantidad:
+						{{ form.cantidad }}
+					</label>
+					{% if form.cantidad.errors %}
+						{% for error in form.cantidad.errors %}
+ 							<small class="error">
+								{{ error|escape }}
+							</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+				<div class="large-6 columns">
+					<label> Total:
+						{{ form.precoParcial }}
+					</label>
+					{% if form.precoParcial.errors %}
+						{% for error in form.precoParcial.errors %}
+							<small class="error">
+								{{ error|escape }}
+							</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+ 			</div>
+			<br>
+			<div class="large-12 columns">
+				<input style="background-color:#04B4AE" class="button default" type='submit' value='Actualizar'/>
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}
